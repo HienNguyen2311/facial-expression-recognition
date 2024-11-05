@@ -19,7 +19,7 @@ pip install numpy scikit-learn deap scoop h5py joblib opencv-python tensorflow p
 ```
 
 ## Usage
-1. Preprocess the AffectNet dataset using the provided scripts
+1. Preprocess the AffectNet dataset using the provided script `FER_data_preprocessing.ipynb`
 2. Run the desired model:
     * For IDGP: `python idgp_affectnet.py`
     * For FD-GPSR: `python idgp_srpysr_affectnet.py`
@@ -28,22 +28,42 @@ pip install numpy scikit-learn deap scoop h5py joblib opencv-python tensorflow p
 
 ## Data Sources
 The AffectNet database provides raw images containing facial images annotated with categorical emotions and dimensional affect (valence and arousal) labels. A subset of images is sampled from the training and validation sets to create smaller, balanced datasets for each emotion category. The sampled images undergo several preprocessing steps:
-    * Face alignment using a pre-trained face detection model
-    * Grayscale conversion
-    * Histogram equalization
-    * Noise reduction
-    * Resizing to 128x128 pixels
+   * Face alignment using a pre-trained face detection model
+   * Grayscale conversion
+   * Histogram equalization
+   * Noise reduction
+   * Resizing to 128x128 pixels
 
 The preprocessed images are then combined with their corresponding arousal, valence, and expression labels. `train_images_data_yy_128px.h5 (400 images)` and `test_images_data_yy_128px.h5` (80 images) are two main files used in this project, particularly for IDGP, FD-GPSR, and CFSR models. `test_images_data_av80.h5` (80 images) and `train_images_data_av160.h5` (160 images) are even smaller subsets of the data. `test_features_yy_128px.h5` (80 images) and `train_features_yy_128px_3kimg.h5` (3840 images) are datasets used to train the hybrid model, which uses deep learning for feature extraction as input for symbolic regression prediction.
 
 ## Technologies Used
 Python, NumPy, scikit-learn, DEAP (Distributed Evolutionary Algorithms in Python), SCOOP (Scalable COncurrent Operations in Python), OpenCV, Pytorch (for EfficientNet baseline)
 
-## Screenshots
+## Sample Screenshots
+
+### 1. EDA
+
+![b](https://github.com/user-attachments/assets/e85993cf-6500-4469-a37c-a6a45f983805)
+
+*Distribution of RGB values and emotional dimensions.*
+
+![a](https://github.com/user-attachments/assets/b93547b6-2850-4719-9e1f-193f74bec27c)
+
+*Emotional expressions mapped by Arousal and Valence.*
+
+### 2. Model training loss
+
+![image](https://github.com/user-attachments/assets/04dd77f0-1f9d-46fe-92ce-a602fb79988d)
+
+*FD-GPSR average training loss across ten runs.*
+
+![image](https://github.com/user-attachments/assets/ed4bff1b-0371-41ac-a535-ba1f8479964f)
+
+*Hybrid model’s average training loss across ten runs.*
 
 ## License
 
-The programs in this repository are provided for research purposes only
+The programs in this repository are provided for research purposes only.
 
 ## Project Report
 
@@ -67,4 +87,4 @@ Key points for models comparison:
 * The GP-based models can automatically adapt their structure to the problem, potentially discovering novel feature combinations.
 * The deep learning baseline relies on a fixed architecture, though it's highly optimized for image tasks.
 
-For more details, please refer to the project report, project_report.pdf, included in this repository.
+For more details, please refer to the project report, `project_report.pdf`, included in this repository.

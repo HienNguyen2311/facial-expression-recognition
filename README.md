@@ -43,11 +43,11 @@ Python, NumPy, scikit-learn, DEAP (Distributed Evolutionary Algorithms in Python
 
 ### 1. EDA
 
-![b](https://github.com/user-attachments/assets/e85993cf-6500-4469-a37c-a6a45f983805)
+![hist](https://github.com/user-attachments/assets/a7957dff-94b3-4d21-ba45-0a4709662579)
 
 *Distribution of RGB values and emotional dimensions.*
 
-![a](https://github.com/user-attachments/assets/b93547b6-2850-4719-9e1f-193f74bec27c)
+![pair](https://github.com/user-attachments/assets/dd93fc26-2a68-43b7-9880-5ed1489016a3)
 
 *Emotional expressions mapped by Arousal and Valence.*
 
